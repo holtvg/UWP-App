@@ -1,0 +1,76 @@
+﻿<Page x:Class="WindowsApp6.Views.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+      xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:controls="using:Template10.Controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:WindowsApp6.Views"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:vm="using:WindowsApp6.ViewModels" mc:Ignorable="d" Height="403.842" Width="505.567">
+
+
+
+    <StackPanel  Height="873" VerticalAlignment="Top" Margin="0,-224,-151,-245" HorizontalAlignment="Left" Width="511" >
+        <StackPanel.Background>
+            <ImageBrush ImageSource="/Assets/veggies.jpg" Opacity="0.8" />
+        </StackPanel.Background>
+        <TextBlock x:ConnectionId='1' x:Name="textBlock5" TextWrapping="Wrap" Text="Grocery Store Inventory" TextAlignment="Center"
+ Margin="0,0,0,0" FontSize="20" Height="41" Foreground="Blue" FontWeight="Bold"/>
+        <Viewbox x:ConnectionId='2' x:Name="splashImage">
+            <Image Source="/Assets/smiths-logo.jpg" Height="198" Width="528" />
+        </Viewbox>
+        <Button x:ConnectionId='3' x:Name="button3" Content="get all items"                      Margin="180,60,0,0" Background="#006400" Foreground="White" />
+        <TextBlock x:ConnectionId='4' x:Name="textBlock" TextWrapping="Wrap" Text="enter item id" Margin="180,10,0,0" Foreground="White"/>
+        <TextBox x:ConnectionId='5' x:Name="textBox" TextWrapping="Wrap" Text="" Margin="160,0,160,0"/>
+        <TextBlock x:ConnectionId='6' x:Name="textBlock2" TextWrapping="Wrap" Text="enter item name" Margin="180,0,0,0" Foreground="White"/>
+        <TextBox x:ConnectionId='7' x:Name="textBox2" TextWrapping="Wrap" Text="" Margin="160,0,160,0"/>
+        <TextBlock x:ConnectionId='8' x:Name="textBlock3" TextWrapping="Wrap" Text="enter item category" Margin="180,0,0,0" Foreground="White"/>
+        <TextBox x:ConnectionId='9' x:Name="textBox3" TextWrapping="Wrap" Text="" Margin="160,0,160,0"  />
+
+
+        <TextBlock x:ConnectionId='10' x:Name="textBlock4" TextWrapping="Wrap" Text="enter item price" Margin="180,0,0,0" Foreground="White"/>
+
+        <TextBox x:ConnectionId='11' x:Name="textBox4" TextWrapping="Wrap" Text="" Margin="160,0,160,0"  />
+
+        <Button x:ConnectionId='12' x:Name="button" Content="get item"                          Width="101" Margin="30,20,0,0" Background="#006400" Foreground="White"/>
+        <Button x:ConnectionId='13' x:Name="button1" Content="add item"                          Width="101" Margin="180,-35,0,0" Background="#006400" Foreground="White"/>
+        <Button x:ConnectionId='14' x:Name="button2" Content="delete item"                         Width="101" Margin="330,-35,0,0" Background="#006400" Foreground="White"/>
+        <Border Background="#006400" BorderThickness="1" Height="41" Margin="-2,5,-2,0">
+            <TextBlock x:ConnectionId='16' x:Name="textBlock5_Copy" TextWrapping="Wrap" Text="     ID         Name            Category                       Price      " 
+            Margin="0,10,0,0"                                                     Foreground="White" />
+        </Border>
+
+
+
+        <Border Background="#006400" BorderThickness="1" Margin="-2,-3,-2,0" >
+            <ScrollViewer Height="257" Margin="0,0,10,0">
+            <ListView x:ConnectionId='15' Name="listView"                                              Height="368"  ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="40" Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding id}" Grid.Column="0" Foreground="White"></TextBlock>
+                                <TextBlock Text="{Binding name}" Grid.Column="1" Foreground="White">></TextBlock>
+                                <TextBlock Text="{Binding category}" Grid.Column="2" Foreground="White">></TextBlock>
+                                <TextBlock Text="{Binding price}" Grid.Column="3" Foreground="White">></TextBlock>
+
+                        <Grid.Resources>
+
+                        </Grid.Resources>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </ScrollViewer>
+</Border>
+    </StackPanel>
+</Page>
+
+
